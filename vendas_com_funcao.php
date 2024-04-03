@@ -32,29 +32,25 @@ function opcaoDePagamento($opcao_pagamento, $valor) {
         $valor_desconto = descontoDoProduto($valor);
         $desconto_do_produto = desconto($valor, $valor_desconto);
         $valor_final = $valor - $desconto_do_produto - $comissao_vendedor;
-        echo "Pagamento feito no $opcao_pagamento <br>O valor do produto é de R$$valor, com o desconto de $valor_desconto% que é R$$desconto_do_produto,e a comissão de R$$comissao_vendedor ficando por R$$valor_final \n";
     } else if($opcao_pagamento == "credito") {
         $valor_desconto = 0;
         $desconto_do_produto = desconto($valor, $valor_desconto);
         $valor_final = $valor - $desconto_do_produto - $comissao_vendedor;
-        echo "Pagamento feito no $opcao_pagamento <br>O valor do produto é de R$$valor, com o desconto de $valor_desconto% que é R$$desconto_do_produto,e a comissão de R$$comissao_vendedor ficando por R$$valor_final \n";
     
     } else if ($opcao_pagamento == "boleto") {
         $valor_desconto = 0;
         $desconto_do_produto = desconto($valor, $valor_desconto);
         $valor_final = $valor - $desconto_do_produto - $comissao_vendedor;
-        echo "Pagamento feito no $opcao_pagamento <br>O valor do produto é de R$$valor, com o desconto de $valor_desconto% que é R$$desconto_do_produto,e a comissão de R$$comissao_vendedor ficando por R$$valor_final \n";
     } else if ($opcao_pagamento == "debito") {
         $valor_desconto = descontoDoProduto($valor);
         $desconto_do_produto = desconto($valor, $valor_desconto);
         $valor_final = $valor - $desconto_do_produto - $comissao_vendedor;
-        echo "Pagamento feito no $opcao_pagamento <br>O valor do produto é de R$$valor, com o desconto de $valor_desconto% que é R$$desconto_do_produto,e a comissão de R$$comissao_vendedor ficando por R$$valor_final\n ";
     } else if ($opcao_pagamento == "pix") {
         $valor_desconto = descontoDoProduto($valor);
         $desconto_do_produto = desconto($valor, $valor_desconto);
         $valor_final = $valor - $desconto_do_produto - $comissao_vendedor;
-        echo "Pagamento feito no $opcao_pagamento <br>O valor do produto é de R$$valor, com o desconto de $valor_desconto% que é R$$desconto_do_produto,e a comissão de R$$comissao_vendedor ficando por R$$valor_final \n";
     }
+    echo "Pagamento feito no $opcao_pagamento <br>O valor do produto é de R$$valor, com o desconto de $valor_desconto% que é R$$desconto_do_produto,e a comissão de R$$comissao_vendedor ficando por R$$valor_final \n";
 }
 
 for($i = 0; $i < 5; $i++) {
