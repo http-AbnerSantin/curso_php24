@@ -70,12 +70,8 @@
     }
 
     $abner = new Abner('0001', 1234235246, "inter");
-    $abner->deposito(100);
-    $abner->saldo();
-    $abner->deposito(100);
-    $abner->saldo();
-    $abner->saque(100);
-    $abner->saldo();
+    $abner->deposito(500);
+    $abner->transferencia(0020, 12372383, 'bradesco', 300 );
 
 
 
