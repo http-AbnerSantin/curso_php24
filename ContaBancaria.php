@@ -26,7 +26,7 @@
             $this->saldo = $deposito;
         }
 
-        public function transferencia() {
+        public function transferencia( $agencia, $numeroDaConta, $banco, $valor) {
             echo "Informe o valor da transferencia <br>";
         }
 
@@ -55,8 +55,17 @@
             }
         }
 
-        public function transferencia() {
-            echo "R$300 na transferencia";
+        public function transferencia($agencia, $numeroDaConta, $banco, $valor) {
+            if($valor <= 0) {
+                echo "Valor invalido";
+            } else {
+                if ($this->saldo < $valor) {
+                    echo "Seu saldo é insuficiente";
+                } else {
+                    echo "Tranferencia feita para conta: $numeroDaConta <br> Agencia : $agencia <br>, Banco: $banco <br> No valor de : R$$valor";
+                    $this->saldo -= $valor;
+                }
+            }
         }
     }
 
